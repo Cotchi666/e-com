@@ -6,7 +6,7 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { useRoutes } from 'react-router-dom';
 import Router from './routes/Router';
-
+import MyChatBot from './views/chatbot/chatbot';
 import { baselightTheme } from "./theme/DefaultColors";
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <MyChatBot/>
       {routing}
     </ThemeProvider>
   );
