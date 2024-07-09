@@ -8,7 +8,7 @@ import { useRoutes } from 'react-router-dom';
 import Router from './routes/Router';
 import MyChatBot from './views/chatbot/chatbot';
 import { baselightTheme } from "./theme/DefaultColors";
-
+import { MessageProvider } from './contexts/chatContext';
 function App() {
   
   const routing = useRoutes(Router);
@@ -16,9 +16,10 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <MyChatBot/>
-      {routing}
+      <MessageProvider> {/* Wrap your components with MessageProvider */}
+        <MyChatBot />
+        {routing}
+      </MessageProvider>
     </ThemeProvider>
   );
 }
